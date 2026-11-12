@@ -1,0 +1,144 @@
+{
+ "place_id": "2018360332",
+ "collected": "2026-11-12",
+ "source": "https://m.place.naver.com/place/2018360332/home",
+ "name": "누수탐지",
+ "category": "배관,냉난방공사",
+ "categoryCodes": [
+  "225111",
+  "225120",
+  "225213",
+  "225814",
+  "226178"
+ ],
+ "phone": null,
+ "virtualPhone": "0507-1436-5011",
+ "phone_note": "안심번호(0507)",
+ "roadAddress": "서울 관악구 봉천로31길 9 2층",
+ "address": "서울 관악구 봉천동 933-1",
+ "coordinate": {
+  "x": "126.9413755",
+  "y": "37.4841483"
+ },
+ "businessHours": [
+  "24시간 영업 / 연중무휴",
+  "매일: 00:00~24:00"
+ ],
+ "businessHoursRaw": [
+  {
+   "__typename": "NewBusinessHour",
+   "name": "",
+   "businessStatusDescription": {
+    "__typename": "BusinessStatusDescription",
+    "status": "24시간 영업",
+    "blindDescription": null,
+    "description": "연중무휴",
+    "showEndsNextDay": null
+   },
+   "businessHours": [
+    {
+     "__typename": "WorkingHoursInfo",
+     "day": "매일",
+     "businessHours": {
+      "__typename": "StartEndTime",
+      "start": "00:00",
+      "end": "24:00"
+     },
+     "breakHours": [],
+     "description": null,
+     "lastOrderTimes": null,
+     "showEndsNextDay": false
+    }
+   ],
+   "comingIrregularClosedDays": [],
+   "comingRegularClosedDays": "",
+   "freeText": ""
+  }
+ ],
+ "conveniences": [
+  "예약",
+  "방문접수/출장"
+ ],
+ "keywordList": [
+  "누수",
+  "누수공사",
+  "누수설비",
+  "관악구누수탐지",
+  "관악구누수"
+ ],
+ "descriptions": [
+  "국가공인 배관기능사가 직접 시공하는 믿을 수 있는 누수탐지 전문업체입니다.\n관악구를 중심으로 수도권 전 지역 출장 가능하며, 합리적인 가격과 정확한 탐지력으로 모든 누수 문제를 100% 완벽히 해결해드립니다.\n\n** 문의전화: 010-8672-0482\n사소한 문의도 언제든 환영합니다!\n\n** 서비스 안내\n- 누수탐지 전문업체\n- 국가공인 배관기능사 직접 시공 및 누수문제 100% 해결\n- 누수 지점을 찾지 못할 경우 출장비 무료\n- 친절한 상담, 합리적인 가격, 철저한 A/S 보장\n- 누수탐지 > 수리 > 복구공사까지 원스톱 해결\n- 보험처리를 위한 서류 발급 가능\n\n** 보유 장비\n- 청음탐지기\n- 가스탐지기\n- 열화상카메라\n- 내시경카메라\n- 관로탐지기\n\n보이지 않는 누수, 대정누수탐지가 정확히 찾아드립니다!\n빠르고 정확한 진단으로 고객님의 불편을 최소화하겠습니다.",
+  "관악구 봉천동 보일러 방바닥 누수! 아래층 천장누수 원인부터 완벽 해결까지",
+  "전문적인 서비스 누수 전문업체 누수탐지 관악구",
+  "신속한 출장과 정확한 진단 관악구 누수탐지",
+  "전화를 대신 받고 응대까지 해드려요!"
+ ],
+ "menus": null,
+ "links": [],
+ "reviews": {
+  "cafeBlogTotal": 53,
+  "visitorTotal": null,
+  "visitorScore": null,
+  "fsasTotal": 53,
+  "samples": [
+   {
+    "type": "블로그",
+    "title": "관악구 봉천동 보일러 방바닥 누수! 아래층 천장누수 원인부터 완벽 해결까지",
+    "url": "https://m.blog.naver.com/fa1111111/224468610745",
+    "name": "태광하수구수도설비",
+    "date": "4일 전"
+   },
+   {
+    "type": "블로그",
+    "title": "천장 물샘 신속하게 해결한 관악구누수탐지",
+    "url": "https://m.blog.naver.com/ybyb0985/224294062624",
+    "name": "ybyb0985님의블로그",
+    "date": "2026.05.23."
+   },
+   {
+    "type": "블로그",
+    "title": "관악구누수탐지 냉난방공사 예약 접수",
+    "url": "https://m.blog.naver.com/h950045/224308493596",
+    "name": "인생공부",
+    "date": "2026.06.07."
+   }
+  ]
+ },
+ "photos": [
+  {
+   "id": "2018360332_business_1",
+   "title": "누수탐지",
+   "originalUrl": "https://ldb-phinf.pstatic.net/20260930_63/1790743563561AJSLC_JPEG/temp_1790741378052.967324391.jpg",
+   "w": 1254,
+   "h": 1254
+  },
+  {
+   "id": "2018360332_business_2",
+   "title": "누수탐지",
+   "originalUrl": "https://ldb-phinf.pstatic.net/20260518_19/1779078601454YtVhi_JPEG/KakaoTalk_20260305_172614610_05.jpg",
+   "w": 3000,
+   "h": 4000
+  },
+  {
+   "id": "2018360332_business_3",
+   "title": "누수탐지",
+   "originalUrl": "https://ldb-phinf.pstatic.net/20260518_276/1779078608817Hp0k6_JPEG/KakaoTalk_20260305_172614610_06.jpg",
+   "w": 4000,
+   "h": 3000
+  },
+  {
+   "id": "2018360332_business_4",
+   "title": "누수탐지",
+   "originalUrl": "https://ldb-phinf.pstatic.net/20260518_162/1779078608889CnIje_JPEG/KakaoTalk_20260305_172614610_07.jpg",
+   "w": 4000,
+   "h": 3000
+  }
+ ],
+ "images": [
+  {
+   "origin": "https://ldb-phinf.pstatic.net/20260930_63/1790743563561AJSLC_JPEG/temp_1790741378052.967324391.jpg",
+   "title": null
+  }
+ ],
+ "label": "대정누수탐지"
+}

@@ -1,0 +1,140 @@
+{
+ "place_id": "2038309215",
+ "collected": "2026-11-12",
+ "source": "https://m.place.naver.com/place/2038309215/home",
+ "name": "누수탐지",
+ "category": "배관,냉난방공사",
+ "categoryCodes": [
+  "225111",
+  "225120",
+  "225213",
+  "225814",
+  "226178"
+ ],
+ "phone": null,
+ "virtualPhone": "0507-1386-9292",
+ "phone_note": "안심번호(0507)",
+ "roadAddress": "경기 부천시 오정구 소사로 835 7동 101호",
+ "address": "경기 부천시 오정구 원종동 70-1",
+ "coordinate": {
+  "x": "126.8039195",
+  "y": "37.5312989"
+ },
+ "businessHours": [
+  "24시간 영업 / 연중무휴",
+  "매일: 00:00~24:00"
+ ],
+ "businessHoursRaw": [
+  {
+   "__typename": "NewBusinessHour",
+   "name": "",
+   "businessStatusDescription": {
+    "__typename": "BusinessStatusDescription",
+    "status": "24시간 영업",
+    "blindDescription": null,
+    "description": "연중무휴",
+    "showEndsNextDay": null
+   },
+   "businessHours": [
+    {
+     "__typename": "WorkingHoursInfo",
+     "day": "매일",
+     "businessHours": {
+      "__typename": "StartEndTime",
+      "start": "00:00",
+      "end": "24:00"
+     },
+     "breakHours": [],
+     "description": null,
+     "lastOrderTimes": null,
+     "showEndsNextDay": false
+    }
+   ],
+   "comingIrregularClosedDays": [],
+   "comingRegularClosedDays": "",
+   "freeText": ""
+  }
+ ],
+ "conveniences": [
+  "방문접수/출장",
+  "예약",
+  "주차"
+ ],
+ "keywordList": [
+  "부천누수탐지",
+  "부천누수",
+  "오정구누수탐지",
+  "오정구누수",
+  "원종동누수탐지"
+ ],
+ "descriptions": [
+  "국가공인 배관기능사가 직접 시공하는 믿을 수 있는 누수탐지 전문업체입니다.\n부천을 중심으로 수도권 전 지역 출장 가능하며, 합리적인 가격과 정확한 탐지력으로 모든 누수 문제를 100% 완벽히 해결해드립니다.\n\n** 문의전화: 010-8672-0482\n사소한 문의도 언제든 환영합니다!\n\n** 서비스 안내\n- 누수탐지 전문업체\n- 국가공인 배관기능사 직접 시공 및 누수문제 100% 해결\n- 누수 지점을 찾지 못할 경우 출장비 무료\n- 친절한 상담, 합리적인 가격, 철저한 A/S 보장\n- 누수탐지 > 수리 > 복구공사까지 원스톱 해결\n- 보험처리를 위한 서류 발급 가능\n\n** 보유 장비\n- 청음탐지기\n- 가스탐지기\n- 열화상카메라\n- 내시경카메라\n- 관로탐지기\n\n보이지 않는 누수, 대정누수탐지가 정확히 찾아드립니다!\n빠르고 정확한 진단으로 고객님의 불편을 최소화하겠습니다.",
+  "부천 누수탐지 눈에 보이지 않는 문제는 이렇게 찾습니다",
+  "부천 고객의 편의를 최우선으로 원스톱 서비스 누수탐지",
+  "출장 서비스와 합리적인 가격 누수탐지 부천",
+  "부천 누수탐지 문제를 근본부터 해결해요"
+ ],
+ "menus": null,
+ "links": [],
+ "reviews": {
+  "cafeBlogTotal": 485,
+  "visitorTotal": 53,
+  "visitorScore": null,
+  "fsasTotal": 485,
+  "samples": [
+   {
+    "type": "블로그",
+    "title": "셀프수리 폭망, 우리의 구원투수 [대정누수탐지]",
+    "url": "https://m.blog.naver.com/minimalmay/224111853743",
+    "name": "우주먼지",
+    "date": "2025.12.16."
+   },
+   {
+    "type": "블로그",
+    "title": "헉, 갑자기 바닥이 축축? 이건 찐 사고죠!",
+    "url": "https://m.blog.naver.com/4fecf1te19/224211984634",
+    "name": "행복한 순간들을 담아낸 일상",
+    "date": "2026.03.11."
+   },
+   {
+    "type": "블로그",
+    "title": "헉! 우리 집 천장에서 물이 뚝뚝... 부천누수탐지, 어디 맡길지 고민되시죠?",
+    "url": "https://m.blog.naver.com/592ke13y/224232944645",
+    "name": "즐거운 일상 속의 행복",
+    "date": "2026.03.29."
+   }
+  ]
+ },
+ "photos": [
+  {
+   "id": "2038309215_business_1",
+   "title": "누수탐지",
+   "originalUrl": "https://ldb-phinf.pstatic.net/20260312_109/1773280813534HWRa5_PNG/1773238533308.png",
+   "w": 1024,
+   "h": 1024
+  },
+  {
+   "id": "2038309215_business_2",
+   "title": "누수탐지",
+   "originalUrl": "https://ldb-phinf.pstatic.net/20260312_162/1773280805641GNikz_PNG/1773146669726.png",
+   "w": 1024,
+   "h": 1024
+  },
+  {
+   "id": "2038309215_business_3",
+   "title": "누수탐지",
+   "originalUrl": "https://ldb-phinf.pstatic.net/20251104_149/1762233983920re9Ht_JPEG/KakaoTalk_20251104_141057736.jpg",
+   "w": 1080,
+   "h": 1528
+  },
+  {
+   "id": "2038309215_business_4",
+   "title": "누수탐지",
+   "originalUrl": "https://ldb-phinf.pstatic.net/20250812_208/1754986827789bhK7h_JPEG/1748394368216.jpg",
+   "w": 1105,
+   "h": 843
+  }
+ ],
+ "images": [],
+ "label": "대정누수탐지"
+}
