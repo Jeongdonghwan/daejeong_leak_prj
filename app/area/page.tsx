@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { CITIES, PLACES, openCities, cityPages, cityPath, cityEncodedPath, pagePath, pageEncodedPath, inSitemap } from '../../lib/data';
 import { breadcrumbJsonLd, itemListJsonLd } from '../../lib/jsonld';
-import { Actions, BranchMap, IconArrow, JsonLd } from '../../components/Common';
-import { BRAND, FACTS, shareMeta } from '../../lib/site';
+import { Actions, BranchList, IconArrow, JsonLd } from '../../components/Common';
+import { BRAND, BRANCHES, FACTS, shareMeta } from '../../lib/site';
 
 const TITLE = `지역별 누수탐지 안내 | ${BRAND}`;
 const DESC = '인천 부평·계양·남동, 서울 강서·양천·구로·금천, 광명, 시흥 지역별 누수탐지·누수수리·누수공사·천장·화장실·배관·수도·아파트 누수 안내. 가까운 지점에서 출장합니다.';
@@ -34,7 +34,7 @@ export default function AreaIndex() {
       <div className="wrap">
         <section className="sec">
           <h2 className="area-h">출장 지역과 지점</h2>
-          <BranchMap />
+          <BranchList items={BRANCHES} />
         </section>
         {cities.map((city) => {
           const pages = cityPages(city).filter(inSitemap);

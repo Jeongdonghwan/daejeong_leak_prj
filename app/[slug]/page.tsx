@@ -143,7 +143,7 @@ export default function KeywordPage({ params }: { params: { slug: string } }) {
       <section className="sec-gray">
         <div className="wrap">
           <SectionHead title={c.stepsHeading} />
-          <ol className="process reveal-group">
+          <ol className="flow reveal-group">
             {c.steps.map((st) => <li key={st.title}><strong>{st.title}</strong><p>{st.text}</p></li>)}
           </ol>
         </div>
@@ -152,7 +152,7 @@ export default function KeywordPage({ params }: { params: { slug: string } }) {
       <div className="wrap">
         <section className="sec">
           <SectionHead title={c.branches.heading} sub={c.branches.text} />
-          <BranchList items={c.branches.items.slice(0, 1)} />
+          <BranchList items={c.branches.items.slice(0, 1)} compact />
         </section>
       </div>
 
