@@ -300,7 +300,7 @@ function viewFor(p: Page, P: Place, C: City, lb: string, nm: string, s: string, 
           ['누가 시공하나', FACTS.license],
           ['못 찾으면 어떻게 되나', FACTS.noFind],
           ['서류가 나오나', FACTS.insurance],
-          ['언제 올 수 있나', `${CONTACT.hours} · ${bn}에서 출장`],
+          ['언제 올 수 있나', `${CONTACT.hours} · ${bn} 담당`],
         ],
       };
     case '추천':
@@ -339,7 +339,7 @@ function viewFor(p: Page, P: Place, C: City, lb: string, nm: string, s: string, 
         heading: `${lb} 업체에 연락하기 전에 정리할 것`,
         paras: [
           `전화 한 통에 증상이 정리돼 있으면 현장에서 헤매는 시간이 줄어듭니다. ${nm} 같은 ${P.homes} 현장은 건물 종류만 알려 주셔도 확인 순서가 달라집니다.`,
-          `출장 동선은 ${C.route}입니다. 일정은 통화로 바로 맞춥니다. 누수 지점을 찾지 못하면 출장비는 받지 않습니다.`,
+          `이 지역은 ${C.route}입니다. 일정은 통화로 바로 맞춥니다. 누수 지점을 찾지 못하면 출장비는 받지 않습니다.`,
         ],
         list: { title: '전화 전에 메모해 둘 것', items: [
           `건물 종류와 층수 (${CTX_NOUN[cx]} 형태, 몇 층인지)`,
@@ -353,7 +353,7 @@ function viewFor(p: Page, P: Place, C: City, lb: string, nm: string, s: string, 
       return {
         heading: `${lb} 24시, 밤에 물이 샐 때`,
         paras: [
-          `${BRAND}는 24시간·연중무휴로 상담과 출장을 받습니다. 밤에 천장에서 물이 떨어지거나 바닥에 물이 고이면 먼저 피해가 커지지 않게 막고, ${nm} 현장 도착 시간은 통화로 정합니다.`,
+          `${BRAND}는 24시간·연중무휴로 상담과 출장을 받습니다. 밤에 천장에서 물이 떨어지거나 바닥에 물이 고이면 먼저 피해가 커지지 않게 막고, ${nm} 현장 방문 시간은 통화로 정합니다.`,
           `밤에는 집 안이 조용해 청음탐지기로 새는 소리를 듣기 좋은 때이기도 합니다. ${pick([`다만 아래층·관리사무소와 연락이 닿지 않으면 확인 범위가 좁아질 수 있습니다.`, `${spot} 주변 ${P.homes} 현장도 같은 순서로 응급 조치 뒤 탐지에 들어갑니다.`], s, 'v24')}`,
         ],
         list: { title: '기다리는 동안 할 것', items: [
@@ -368,25 +368,25 @@ function viewFor(p: Page, P: Place, C: City, lb: string, nm: string, s: string, 
       return {
         heading: `${lb} 당일 방문, 이렇게 맞춥니다`,
         paras: [
-          `당일 방문은 그날 일정과 거리에 따라 정해집니다. ${j(nm, '은')} ${C.route}입니다. 전화로 주소와 증상을 받으면 가장 가까운 지점에서 도착 가능한 시간을 바로 말씀드립니다.`,
+          `당일 방문 시간은 그날 일정에 맞춰 정합니다. ${j(nm, '은')} ${C.route}입니다. 전화로 주소와 증상을 받으면 담당 지점에서 방문 가능한 시간을 바로 말씀드립니다.`,
           `당일에 탐지와 수리를 함께 끝낼 수 있는지는 원인 위치와 여는 범위에 달려 있습니다. ${pick([`복구공사(몰탈 양생·타일·마루)는 마르는 시간이 필요해 날을 나누기도 합니다.`, `같은 날 끝나지 않으면 남은 공정과 날짜를 그 자리에서 정합니다.`], s, 'vd')}`,
         ],
         table: [
-          ['가까운 지점', br.map((b) => `${b.name} (${b.dong})`).join(' / ')],
-          ['도착 시간', '통화 때 거리와 일정으로 안내'],
+          ['담당 지점', br.map((b) => `${b.name} 지점`).join(' / ')],
+          ['방문 시간', '통화 때 일정을 맞춰 안내'],
           ['당일 가능', '증상 확인 · 계통 나누기 · 장비 탐지 · 간단한 수리'],
           ['날을 나눌 수 있는 일', '넓은 복구공사, 위·아래층 일정 맞추기'],
         ],
       };
     case '출장':
       return {
-        heading: `${lb} 출장, 어디서 어떻게 오나`,
+        heading: `${lb} 출장, 이렇게 맡습니다`,
         paras: [
-          `${BRAND} 업체 소개에는 '관악구·부천을 중심으로 수도권 전 지역 출장 가능'이라고 적혀 있습니다. 지점은 관악·부천·동작·강서 네 곳이고, ${j(nm, '은')} ${C.route}입니다.`,
+          `${BRAND} 업체 소개에는 '수도권 전 지역 출장 가능'이라고 적혀 있습니다. 지점은 관악·부천·동작·강서 네 곳이고, ${j(nm, '은')} ${C.route}입니다.`,
           `출장해서 누수 지점을 찾지 못하면 출장비는 받지 않습니다. ${pick([`찾은 뒤에는 수리와 복구공사까지 같은 방문에서 이어 갈 수 있습니다.`, `${nm} ${CTX_NOUN[cx]} 현장도 같은 조건입니다.`], s, 'vo')}`,
         ],
         table: [
-          ['가까운 지점', br.map((b) => `${b.name} — ${b.addr}`).join(' / ')],
+          ['담당 지점', br.map((b) => `${b.name} 지점`).join(' · ')],
           ['출장 범위', FACTS.area],
           ['못 찾은 경우', FACTS.noFind],
           ['상담', `${CONTACT.phone} · ${CONTACT.hours}`],
@@ -441,8 +441,8 @@ const MOD_DESC: Record<string, (a: string, sh: string) => string> = {
   전문: (a, sh) => `${a} ${sh} 전문 ${BRAND} — 탐지·수리·복구공사 원스톱, 국가공인 배관기능사 직접 시공.`,
   업체: (a, sh) => `${a} ${sh} 업체에 전화하기 전 메모할 것과 진행 순서. 24시간·연중무휴 상담.`,
   '24시': (a, sh) => `${a} ${sh} 24시간·연중무휴. 밤에 물이 샐 때 기다리는 동안 할 일과 출장 순서.`,
-  당일: (a, sh) => `${a} ${sh} 당일 방문 — 가까운 지점에서 도착 시간 안내, 당일 가능한 작업과 나누는 작업.`,
-  출장: (a, sh) => `${a} ${sh} 출장 — 관악·부천·동작·강서 지점에서 수도권 출장. 누수 지점을 못 찾으면 출장비 무료.`,
+  당일: (a, sh) => `${a} ${sh} 당일 방문 — 담당 지점에서 방문 시간 안내, 당일 가능한 작업과 나누는 작업.`,
+  출장: (a, sh) => `${a} ${sh} 출장 — 관악·부천·동작·강서 네 지점이 수도권 전 지역 방문. 누수 지점을 못 찾으면 출장비 무료.`,
 };
 
 export function compose(p: Page): Composed {
@@ -465,7 +465,7 @@ export function compose(p: Page): Composed {
 
   // ---- 메타 ----
   const title = pick([
-    `${p.kw} | ${main.name} 지점 출장 ${BRAND}`,
+    `${p.kw} | 24시간 방문 ${BRAND}`,
     `${p.kw} - 탐지·수리·복구 ${BRAND}`,
     `${p.kw} | 장비 5종·배관기능사 ${BRAND}`,
   ], s, 'title');
@@ -476,8 +476,8 @@ export function compose(p: Page): Composed {
     `${nm} ${sh} 금액은 현장에서 범위를 본 뒤 정합니다. 누수 지점을 찾지 못하면 출장비는 받지 않습니다.`,
     `단가표 대신 기준을 먼저 말씀드립니다. ${nm} 현장의 탐지 범위·배관 종류·복구 면적이 금액을 정합니다.`,
   ] : p.mod === '24시' || p.mod === '당일' || p.mod === '출장' ? [
-    `${CONTACT.hours}. ${j(nm, '은')} ${main.name} 지점에서 출장합니다. 도착 시간은 통화로 정합니다.`,
-    `${FACTS.area}. ${nm} 현장도 ${br.map((b) => b.name).join('·')} 지점에서 갑니다.`,
+    `${CONTACT.hours}. ${j(nm, '은')} ${main.name} 지점 담당 구역이고, 방문 시간은 통화로 정합니다.`,
+    `${nm} 현장은 ${br.map((b) => b.name).join('·')} 지점이 맡아 방문합니다. 못 찾으면 출장비는 받지 않습니다.`,
   ] : p.mod ? [
     `장비 5종으로 위치를 좁히고, 국가공인 배관기능사가 직접 고치고, 복구공사까지 이어서 합니다.`,
     `${nm} ${sh}, 찾는 사람과 고치는 사람이 같습니다. 탐지 > 수리 > 복구공사 원스톱.`,
@@ -497,12 +497,12 @@ export function compose(p: Page): Composed {
     전문: `${BRAND}는 누수탐지 전문업체로, ${nm} 현장도 탐지 > 수리 > 복구공사를 한 번에 맡고 국가공인 배관기능사가 직접 시공합니다.`,
     업체: `${lb} 업체에 연락할 때는 건물 종류, 처음 젖은 날, 계량기가 도는지, 아래층 연락 여부를 알려 주시면 됩니다.`,
     '24시': `${BRAND}는 24시간·연중무휴로 상담·출장을 받습니다. 밤에는 계량기함 밸브를 먼저 잠그고 전화 주세요.`,
-    당일: `${j(nm, '은')} ${main.name} 지점(${main.dong})에서 출장하며, 당일 방문 가능 시간은 통화로 바로 안내합니다.`,
-    출장: `${nm} 출장은 ${br.map((b) => `${b.name} 지점`).join('·')}에서 갑니다. 누수 지점을 찾지 못하면 출장비는 받지 않습니다.`,
+    당일: `${j(nm, '은')} ${main.name} 지점 담당이며, 당일 방문 가능 시간은 통화로 바로 안내합니다.`,
+    출장: `${nm} 출장은 ${br.map((b) => `${b.name} 지점`).join('·')}이 맡습니다. 누수 지점을 찾지 못하면 출장비는 받지 않습니다.`,
   };
   const answer = answerBody[p.mod] ?? answerBody[''];
   const summary: [string, string][] = [
-    ['가까운 지점', br.map((b) => `${b.name} (${b.dong})`).join(' · ')],
+    ['담당 지점', br.map((b) => `${b.name} 지점`).join(' · ')],
     ['장비', `${svc.tools.slice(0, 2).map((i) => TOOLS[i].name).join('·')} 등 5종`],
     ['먼저 볼 곳', svc.look],
     ['상담', `${CONTACT.phone} · ${CONTACT.hours}`],
@@ -513,7 +513,7 @@ export function compose(p: Page): Composed {
     `${nm} 누수 문의는 대개 '어디서 새는지 모르겠다'로 시작합니다. 물은 배관을 따라 흐르다 엉뚱한 곳에서 보이기 때문에, 젖은 자리 바로 아래를 깬다고 해결되지 않습니다. 그래서 탐지부터 합니다.`,
     `${j(C.full, '은')} ${C.traits}입니다. ${p.kw} 문의도 건물 종류에 따라 확인할 배관이 달라, 첫 통화에서 건물과 증상을 먼저 여쭙니다.`,
     `누수는 시간이 지날수록 곰팡이·악취·마감재 손상으로 번지고 아래층 피해도 커집니다. ${nm}에서 천장 얼룩이나 계량기 이상을 봤다면 일찍 위치를 확인하는 편이 덜 깨고 끝납니다.`,
-    `${j(nm, '은')} ${C.route}입니다. ${CONTACT.hours}로 상담을 받고, 도착 시간은 통화로 정합니다.`,
+    `${j(nm, '은')} ${C.route}입니다. ${CONTACT.hours}로 상담을 받고, 방문 일정은 통화로 정합니다.`,
     `${spots[0]}, ${spots[1]} 주변처럼 ${j(P.homes, '이')} 모인 곳은 배관 구조가 비슷한 건물이 많습니다. 원인을 짐작하는 데 도움이 되지만, 실제 위치는 장비로 확인해야 합니다.`,
     `${nm} ${sh} 현장에서 먼저 확인할 곳은 ${svc.look}입니다. 전화로 증상을 들으면 어느 쪽부터 볼지 정할 수 있습니다.`,
     `'${pick(svc.symptoms, s, 'isym')}'는 말로 시작하는 ${sh} 문의가 많습니다. ${nm} 현장도 그 증상이 언제부터, 어디서 시작됐는지부터 여쭙니다.`,
@@ -526,7 +526,7 @@ export function compose(p: Page): Composed {
     paras: [
       `${P.kind === '시구' ? nm : P.admin.replace(/^(인천광역시|서울특별시|경기도) /, '')}에는 ${j(P.homes, '이')} 있습니다. ${end(P.note)}`,
       pick([
-        `${nearby.length >= 3 ? `${j(nm, '과')} 가까운 ${nearby.slice(0, 3).join('·')} 쪽도 같은 동선으로 다닙니다. ` : ''}${spots[1] || spots[0]} 주변은 도착 시간을 통화로 바로 맞출 수 있습니다.`,
+        `${nearby.length >= 3 ? `${nm} 옆 ${nearby.slice(0, 3).join('·')} 쪽도 함께 맡습니다. ` : ''}${spots[1] || spots[0]} 주변도 방문 시간을 통화로 바로 맞춥니다.`,
         `${nearby.length >= 3 ? `${C.full} 안에서는 ${nearby.slice(0, 4).join('·')} 같은 동네도 다닙니다. ` : ''}${FACTS.area}합니다.`,
         `${pick(CTX_LINE[cx], s, 'rc')}${nearby.length >= 2 ? ` ${nearby.slice(0, 2).join('·')} 쪽 문의도 같은 순서로 봅니다.` : ''}`,
       ], s, 'rp2'),
@@ -581,15 +581,16 @@ export function compose(p: Page): Composed {
   const capTail = [`${nm} 현장도 같은 장비와 순서로 확인합니다.`, `${lb} 상담 때 이 사진처럼 과정을 보여 드립니다.`, `${sh} 작업에서 흔히 거치는 단계입니다.`];
   const photos = {
     heading: pick([`현장 사진으로 보는 ${sh}`, `${BRAND} 현장 기록`, `${sh} 작업 장면`], s, 'ch'),
-    items: photosFor(p, 3).map((x, i) => ({ p: x, caption: `${x.desc}. ${capTail[(seedOf(s) + i) % capTail.length]}` })),
+    items: photosFor(p, 4).map((x, i) =>  // [0] 머리 요약 카드, [1..3] 머리 아래 사진 줄
+      ({ p: x, caption: `${x.desc}. ${capTail[(seedOf(s) + i) % capTail.length]}` })),
   };
 
   // ---- 진행 순서 ----
   const steps = svc.steps(nm, lb, cn);
 
-  // ---- 가까운 지점 ----
+  // ---- 담당 지점 ----
   const branches = {
-    heading: pick([`${nm}에서 가까운 지점`, `${nm} 출장 지점`, `${j(nm, '은')} 어느 지점에서 가나`], s, 'bh'),
+    heading: pick([`${nm} 담당 지점`, `${nm} 출장 지점`, `${j(nm, '은')} 어느 지점이 맡나`], s, 'bh'),
     text: `${j(nm, '은')} ${C.route}입니다. 전화는 지점과 상관없이 대표번호 하나(${CONTACT.phone})로 받습니다.`,
     items: br,
   };
@@ -601,7 +602,7 @@ export function compose(p: Page): Composed {
     ['주변', spots.join(' · ')],
     ['먼저 볼 곳', `${nm} ${CTX_LOOK[cx]}`],
     ['하는 일', `${FACTS.oneStop} · 보험처리용 서류 발급`],
-    ['출장', `${main.name} 지점 (${main.addr})`],
+    ['담당', `${main.name} 지점 · ${CONTACT.hours} 방문`],
   ];
 
   // ---- FAQ ----
@@ -612,8 +613,8 @@ export function compose(p: Page): Composed {
     { q: '누수 보험 처리가 되나요?', a: `보상 여부와 범위는 가입한 보험의 약관과 보험사 판단에 따라 다릅니다. ${BRAND}는 보험 처리에 필요한 원인·수리 내용 서류를 발급해 드립니다.` },
     { q: '찾은 뒤 수리는 다른 곳에 맡겨야 하나요?', a: `아닙니다. ${FACTS.oneStop}까지 원스톱으로 합니다. 시공은 국가공인 배관기능사가 직접 합니다.` },
     { q: `${nm} 아래층 천장이 젖는데 우리 집 문제인가요?`, a: `세대 밸브를 잠근 상태의 계량기, 위층 바닥 열화상 화면, 청음 결과를 비교해 원인 세대를 확인합니다. 결과는 사진으로 남겨 드립니다.` },
-    { q: '밤이나 주말에도 오나요?', a: `24시간·연중무휴로 상담과 출장을 받습니다. ${nm} 도착 시간은 통화로 정합니다.` },
-    { q: '어느 지점으로 전화해야 하나요?', a: `지점과 상관없이 대표번호 ${CONTACT.phone} 하나로 받습니다. ${j(nm, '은')} ${br.map((b) => b.name).join('·')} 지점에서 출장합니다.` },
+    { q: '밤이나 주말에도 오나요?', a: `24시간·연중무휴로 상담과 출장을 받습니다. ${nm} 방문 시간은 통화로 정합니다.` },
+    { q: '어느 지점으로 전화해야 하나요?', a: `지점과 상관없이 대표번호 ${CONTACT.phone} 하나로 받습니다. ${j(nm, '은')} ${br.map((b) => b.name).join('·')} 지점이 맡습니다.` },
   ];
   const first = p.mod === '비용' || p.mod === '가격' || p.mod === '견적' ? [pool[1], pool[2]] : p.mod === '출장' || p.mod === '당일' || p.mod === '24시' ? [pool[0], pool[6]] : p.mod ? [pool[4], pool[3]] : [];
   const faq = [...svc.faq(lb, nm), ...first, ...rotate(pool.filter((x) => !first.includes(x)), s, 'faq')].slice(0, 3);

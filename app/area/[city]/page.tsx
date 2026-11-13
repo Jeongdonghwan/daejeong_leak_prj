@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { CITIES, PLACES, openCities, cityPages, cityEncodedPath, pagePath, pageEncodedPath, inSitemap } from '../../../lib/data';
+import { CITIES, CITY_ORDER, PLACES, openCities, cityPages, cityEncodedPath, pagePath, pageEncodedPath, inSitemap } from '../../../lib/data';
 import { breadcrumbJsonLd, itemListJsonLd } from '../../../lib/jsonld';
-import { Actions, BranchList, IconArrow, JsonLd, SectionHead } from '../../../components/Common';
+import { Actions, BranchList, IconArrow, Img, JsonLd, SectionHead } from '../../../components/Common';
 import { BRAND, branchOf, shareMeta } from '../../../lib/site';
 
 export const dynamicParams = false;
@@ -17,7 +17,7 @@ export function generateMetadata({ params }: { params: { city: string } }): Meta
   const city = dec(params.city);
   if (!CITIES[city]) return {};
   const title = `${city} 누수탐지 지역 안내 | ${BRAND}`;
-  const description = `${CITIES[city].full} 동네별 누수탐지·누수수리·누수공사·천장·화장실·배관·수도·아파트 누수 안내. ${branchOf(CITIES[city].branch[0]).name} 지점에서 출장, 24시간 연중무휴.`;
+  const description = `${CITIES[city].full} 동네별 누수탐지·누수수리·누수공사·천장·화장실·배관·수도·아파트 누수 안내. ${branchOf(CITIES[city].branch[0]).name} 지점 담당, 24시간 연중무휴.`;
   return { title, description, alternates: { canonical: cityEncodedPath(city) }, ...shareMeta(`area-${city}`, `${city} 누수탐지 지역 안내`, { title, description, url: cityEncodedPath(city) }) };
 }
 
@@ -36,16 +36,19 @@ export default function CityHub({ params }: { params: { city: string } }) {
         itemListJsonLd(pages.map((p) => ({ name: p.kw, path: pageEncodedPath(p) }))),
       ]} />
       <section className="phead">
-        <div className="wrap">
+        <div className="wrap phead-grid">
+          <div>
           <nav className="crumbs" aria-label="경로"><Link href="/">홈</Link><span>/</span><Link href="/area/">지역</Link><span>/</span><span>{city}</span></nav>
           <h1>{city} 누수탐지 지역 안내</h1>
-          <p className="phead-lead">{C.full}는 {C.traits}입니다. 출장은 {C.route}입니다. 아래에서 동네와 궁금한 내용을 고르세요.</p>
+          <p className="phead-lead">{C.full}는 {C.traits}입니다. 이 지역은 {C.route}입니다. 아래에서 동네와 궁금한 내용을 고르세요.</p>
           <Actions dark />
+          </div>
+          <figure className="phead-ph"><Img id={`d${(CITY_ORDER.indexOf(city) % 7) + 1}`} lazy={false} /></figure>
         </div>
       </section>
       <div className="wrap">
         <section className="sec">
-          <SectionHead title={`${city}에서 가까운 지점`} />
+          <SectionHead title={`${city} 담당 지점`} />
           <BranchList items={C.branch.map(branchOf)} />
         </section>
         {kinds.map((k) => (

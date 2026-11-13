@@ -34,6 +34,7 @@ export default function KeywordPage({ params }: { params: { slug: string } }) {
   const P = PLACES[p.place];
   const rel = related(p);
   const path = pageEncodedPath(p);
+  const [hp, ...strip] = c.photos.items;
   const relList = [...rel.samePlace, ...rel.sameCity, ...rel.otherCities].map((x) => ({ name: x.kw, path: pageEncodedPath(x) }));
 
   return (
@@ -56,11 +57,26 @@ export default function KeywordPage({ params }: { params: { slug: string } }) {
             <Actions dark />
           </div>
           <aside className="sheet" aria-label="요약" data-reveal>
+            <figure className="sheet-ph"><img src={`/img/${hp.p.id}.webp`} alt={`${p.kw} - ${hp.p.desc}`} width={hp.p.w} height={hp.p.h} /></figure>
             <p className="sheet-ans">{c.answer}</p>
             <dl>{c.summary.map(([k, v]) => <div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}</dl>
           </aside>
         </div>
       </section>
+
+      <div className="wrap">
+        <section className="sec sec-shots">
+          <SectionHead title={c.photos.heading} />
+          <div className="shots">
+            {strip.map(({ p: x, caption }, i) => (
+              <figure key={x.id} data-reveal style={{ transitionDelay: `${i * 80}ms` }}>
+                <div className="ph"><img src={`/img/${x.id}.webp`} alt={`${p.kw} 참고 - ${x.desc}`} loading="lazy" width={x.w} height={x.h} /></div>
+                <figcaption>{caption}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      </div>
 
       <div className="wrap">
         <section className="sec">
@@ -125,20 +141,6 @@ export default function KeywordPage({ params }: { params: { slug: string } }) {
           <Actions sms={false} dark />
         </div>
       </section>
-
-      <div className="wrap">
-        <section className="sec">
-          <SectionHead title={c.photos.heading} />
-          <div className="shots">
-            {c.photos.items.map(({ p: x, caption }, i) => (
-              <figure key={x.id} data-reveal style={{ transitionDelay: `${i * 80}ms` }}>
-                <div className="ph"><img src={`/img/${x.id}.webp`} alt={`${p.kw} 참고 - ${x.desc}`} loading="lazy" width={x.w} height={x.h} /></div>
-                <figcaption>{caption}</figcaption>
-              </figure>
-            ))}
-          </div>
-        </section>
-      </div>
 
       <section className="sec-gray">
         <div className="wrap">

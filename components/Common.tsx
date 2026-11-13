@@ -79,19 +79,19 @@ export const StickyBar = () => (
   </div>
 );
 
-// 지점 표 — 지점명 · 가까운 출장 지역(places.json CITIES.branch) · 플레이스 등록 주소
+// 지점 표 — 지점명 · 담당 지역(places.json CITIES.branch) · 플레이스 등록 주소
 // compact: 키워드 페이지용 한 줄 — 표 머리·안내 문장 없이 (페이지 간 같은 문장 줄이기)
 export const BranchList = ({ items, compact = false }: { items: Branch[]; compact?: boolean }) => (
   <div className="btable-wrap" data-reveal>
     <table className={compact ? 'btable compact' : 'btable'}>
-      {!compact && <thead><tr><th scope="col">지점</th><th scope="col">가까운 출장 지역</th><th scope="col">주소</th></tr></thead>}
+      {!compact && <thead><tr><th scope="col">지점</th><th scope="col">담당 지역</th><th scope="col">주소</th></tr></thead>}
       <tbody>
         {items.map((b) => {
           const near = CITY_ORDER.filter((c) => CITIES[c].branch.includes(b.key));
           return (
             <tr key={b.key}>
               <th scope="row">{b.name} 지점</th>
-              <td data-h="가까운 출장 지역">{near.length > 0 ? near.map((c, i) => <span key={c}>{i > 0 && ' · '}{isOpenCity(c) ? <Link href={cityPath(c)}>{c}</Link> : c}</span>) : '수도권 출장'}</td>
+              <td data-h="담당 지역">{near.length > 0 ? near.map((c, i) => <span key={c}>{i > 0 && ' · '}{isOpenCity(c) ? <Link href={cityPath(c)}>{c}</Link> : c}</span>) : '수도권 출장'}</td>
               <td data-h="주소">{b.addr} <small>({b.lot})</small> <a href={placeUrl(b)} target="_blank" rel="noopener noreferrer" className="br-place">네이버 플레이스</a></td>
             </tr>
           );
