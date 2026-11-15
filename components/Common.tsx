@@ -1,6 +1,6 @@
 // 공통 UI — 이모지 없이 선 아이콘, 각진 2칸 전화 버튼, 지점 표.
 import Link from 'next/link';
-import { BRAND, CONTACT, FACTS, BRANCHES, Branch, tel, smsHref, placeUrl } from '../lib/site';
+import { BRAND, CONTACT, FACTS, BRANCHES, Branch, UPDATED, tel, smsHref, placeUrl } from '../lib/site';
 import { photo, CITIES, CITY_ORDER, cityPath, openCities } from '../lib/data';
 
 const OPEN_CITIES = new Set(openCities());
@@ -61,14 +61,14 @@ export const Footer = () => (
       <div>
         <strong className="foot-brand">{BRAND}</strong>
         <p>누수탐지 · 누수수리 · 누수공사 · 복구공사<br />{FACTS.area} · {CONTACT.hours}</p>
-        <p><Link href="/area/">지역 안내</Link> · <Link href="/blog/">누수 궁금증</Link> · <a href="/rss.xml">RSS</a></p>
+        <p><Link href="/about/">소개</Link> · <Link href="/area/">지역 안내</Link> · <Link href="/blog/">누수 궁금증</Link> · <a href="/rss.xml">RSS</a></p>
       </div>
       <ul className="foot-info">
         <li><span>대표번호</span><a href={tel}>{CONTACT.phone}</a></li>
         {BRANCHES.map((b) => <li key={b.key}><span>{b.name} 지점</span>{b.addr}</li>)}
       </ul>
     </div>
-    <div className="wrap foot-bottom">© {new Date().getFullYear()} {BRAND} · 지점 주소는 네이버 플레이스 등록 주소입니다. 상담 때 받은 주소·연락처는 출장 안내에만 씁니다.</div>
+    <div className="wrap foot-bottom">© {new Date().getFullYear()} {BRAND} · 최종 수정 <time dateTime={UPDATED}>{UPDATED}</time> · 지점 주소는 네이버 플레이스 등록 주소입니다. 상담 때 받은 주소·연락처는 출장 안내에만 씁니다.</div>
   </footer>
 );
 
