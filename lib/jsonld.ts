@@ -1,4 +1,4 @@
-import { SITE_URL, SITE_NAME, BRAND, CONTACT, BRANCHES, placeUrl } from './site';
+import { SITE_URL, SITE_NAME, BRAND, CONTACT, BRANCHES, placeUrl, UPDATED } from './site';
 
 const region = (addr: string): [string, string] => (addr.startsWith('경기') ? ['경기도', addr.split(' ').slice(1, 3).join(' ')] : ['서울특별시', addr.split(' ')[1]]);
 
@@ -55,6 +55,7 @@ export const serviceJsonLd = (o: { name: string; type: string; description: stri
   description: o.description,
   url: `${SITE_URL}${o.path}`,
   areaServed: { '@type': 'Place', name: o.area },
+  dateModified: UPDATED,
   provider: { '@id': `${SITE_URL}/#business` },
 });
 
