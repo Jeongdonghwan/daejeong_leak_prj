@@ -25,7 +25,7 @@ ROOT = HERE.parent
 SRC = ROOT / 'keywords' / '대정누수탐지_키워드.xlsx'
 OUT_XLSX = ROOT / 'keywords' / '대정누수탐지_페이지.xlsx'
 SP = ROOT / 'data' / 'site-pages.json'
-SITE_URL = 'http://127.0.0.1:18994'  # 도메인 확정 전 (lib/site.ts·data/drip.json 과 함께 바꿀 것)
+SITE_URL = 'https://xn--od1brsj67afzfc9b6ur.kr'  # 도메인 확정 전 (lib/site.ts·data/drip.json 과 함께 바꿀 것)
 WORDS = {'누수탐지', '누수', '누수수리', '누수공사', '누수탐지업체', '화장실누수', '천장누수', '배관누수', '수도누수', '아파트누수'}
 
 rows = []

@@ -3,7 +3,7 @@
 //   문의전화 010-8672-0482 (소개글 표기. 플레이스 0507 안심번호는 쓰지 않음), 24시간 영업·연중무휴.
 
 // TODO(도메인 확정 후): SITE_URL 바꾸기 (data/drip.json·scripts/build_pages.py 도 같이). 배포: bash scripts/deploy.sh <묶음> <URL>
-export const SITE_URL = process.env.SITE_URL || 'http://127.0.0.1:18994';
+export const SITE_URL = process.env.SITE_URL || 'https://xn--od1brsj67afzfc9b6ur.kr';
 export const BRAND = '대정누수탐지';
 export const SITE_NAME = `${BRAND} | 누수탐지·수리·복구공사`;
 

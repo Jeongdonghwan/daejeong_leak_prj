@@ -36,7 +36,7 @@ bash scripts/deploy.sh <묶음 1~4> <https://도메인>   # git remote(origin) �
 python -I scripts/drip/drip_status.py data/drip.json  # launch null → WAVE=0 POST=0
 python -I scripts/drip/schedule_posts.py <오픈일 YYYY-MM-DD>  # 글 45편 date 배정(하루 1·2편 번갈아 30일) + drip.json launch 채움
 ```
-미리보기: `npx serve out -l 18994` 또는 `python -m http.server 18994 -d out` → http://127.0.0.1:18994/ (빌드 SITE_URL 기본값도 이 주소)
+미리보기: `npx serve out -l 18994` 또는 `python -m http.server 18994 -d out` → https://xn--od1brsj67afzfc9b6ur.kr/ (빌드 SITE_URL 기본값도 이 주소)
 
 ## 사실 근거 (지어낸 수치 없음) — `source/facts.md`
 - 네이버 플레이스 4곳(2026-11-12 수집): 관악 2018360332 · 부천 2038309215 · 동작 2039634703 · 강서 2069602389
@@ -60,7 +60,7 @@ python -I scripts/drip/schedule_posts.py <오픈일 YYYY-MM-DD>  # 글 45편 dat
 - 파비콘: 남색 사각 + 빨강 물방울 + 흰 수평선 (`app/icon.png`, `app/apple-icon.png`, `public/favicon.ico`) — 헤더 로고 마크는 파랑 사각 + 흰 물방울
 
 ## 받아야 할 정보 → `lib/site.ts`
-- [ ] 도메인 (`SITE_URL`, `data/drip.json` siteUrl, `scripts/build_pages.py` SITE_URL — 지금 `http://127.0.0.1:18994`)
+- [ ] 도메인 (`SITE_URL`, `data/drip.json` siteUrl, `scripts/build_pages.py` SITE_URL — 지금 `https://xn--od1brsj67afzfc9b6ur.kr`)
 - [ ] 오픈일 → `schedule_posts.py <날짜>` (drip.json launch 도 채워짐)
 - [ ] 서치어드바이저·서치콘솔 소유확인 코드 (`NAVER_VERIFY`, `GOOGLE_VERIFY` 자리 있음)
 - [ ] 사업자등록번호·대표자명 (플레이스에 없음)
