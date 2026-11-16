@@ -7,8 +7,8 @@ pattern: pipe
 industry: 누수탐지
 channel: blog
 region: null
-date:
-publishedAt:
+date: 2026-12-08
+publishedAt: 2026-12-08
 ---
 
 ## 성질과 이음 방식이 다른 두 가지 수도관입니다
