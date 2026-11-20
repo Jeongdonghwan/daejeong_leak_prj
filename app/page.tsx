@@ -8,7 +8,7 @@ import { faqJsonLd, itemListJsonLd } from '../lib/jsonld';
 import { Actions, BranchList, Img, IconArrow, JsonLd, SectionHead } from '../components/Common';
 
 const HOME_TITLE = `${BRAND} | 누수탐지·수리·복구공사 원스톱, 수도권 출장`;
-const HOME_DESC = '청음·가스·열화상·내시경·관로탐지기로 누수 지점을 찾고, 국가공인 배관기능사가 수리·복구공사까지. 누수 지점을 못 찾으면 출장비 무료, 보험처리용 서류 발급, 24시간 연중무휴.';
+const HOME_DESC = '청음·가스·열화상·내시경으로 누수 지점을 찾고 배관기능사가 수리·복구까지. 못 찾으면 출장비 무료, 24시간 연중무휴.';
 export const metadata: Metadata = {
   title: HOME_TITLE,
   description: HOME_DESC,
