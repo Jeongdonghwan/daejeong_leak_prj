@@ -692,7 +692,8 @@ export function ray(p: Page) {
     time: [`${br[0].name} 지점 방문 시간 안내`, `24시간·연중무휴 출장 순서`, `${cn} 누수 급할 때 연락 순서`, ...(spot ? [`${spot} 주변 방문 일정 안내`] : [])],
     base: [`계통 나누기부터 복구까지`, `발생 부위만 여는 탐지 순서`, `${cn} 배관에서 새는 자리 찾기`, ...(spot ? [`${spot} 주변 현장 탐지 순서`] : [])],
   } as Record<MG, string[]>)[g], s);
-  const title = `${p.kw} ${h1sub} | ${BRAND}`; // h1 과 같은 글자 + 상호 한 번
+  const front = `${p.kw} ${h1sub}`; // h1 과 같은 글자
+  const title = `${front} | ${BRAND}`.length <= 40 ? `${front} | ${BRAND}` : front; // 네이버 권장 40자: 넘으면 상호를 뺀다(og:site_name 에 상호가 있다)
 
   const summary = [c.answer, `${j(nm, '은')} ${C.route}입니다.`, pick([
     `누수 지점을 찾지 못하면 출장비는 받지 않고, ${nm} 현장도 찾은 뒤 수리·복구까지 이어서 합니다.`,
