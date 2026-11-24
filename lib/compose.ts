@@ -658,6 +658,18 @@ const KW_AT = new Set([0, 1, 2, 5]); // 절 6개 중 4개 h2 에 키워드 전�
 type MG = 'price' | 'pick' | 'time' | 'base';
 const mg = (m: string): MG => (['비용', '가격', '견적'].includes(m) ? 'price' : ['잘하는곳', '추천', '전문', '업체'].includes(m) ? 'pick' : ['24시', '당일', '출장'].includes(m) ? 'time' : 'base');
 
+// title·h1 공용 수식어(2026-11-24): "키워드 수식어" 가 40자를 넘으면 더 짧은 벌을 고르고, 그래도 넘으면 수식어를 낱말 단위로 줄인다.
+function fitSub(kw: string, arr: string[], s: string): string {
+  const ok = (x: string) => kw.length + 1 + x.length <= 40;
+  const first = pick(arr, s, 'h1sub');
+  if (ok(first)) return first;
+  const fits = arr.filter(ok);
+  if (fits.length) return pick(fits, s, 'h1sub2');
+  const w = [...arr].sort((a, b) => a.length - b.length)[0].split(' ');
+  while (w.length > 1 && !ok(w.join(' '))) w.pop();
+  return w.join(' ');
+}
+
 export function ray(p: Page) {
   const c = compose(p);
   const P = PLACES[p.place];
@@ -674,12 +686,13 @@ export function ray(p: Page) {
   const spot = rotate(P.spots, s, 'h1spot').find((x) => !words.some((w) => x.includes(w)));
   const head = (i: number, sub: string) => (KW_AT.has(i) ? `${p.kw}${i % 2 ? ' — ' : ': '}${sub}` : sub);
 
-  const h1sub = pick(({
+  const h1sub = fitSub(p.kw, ({
     price: [`탐지·수리·복구 범위로 정하는 금액`, `못 찾으면 출장비 없는 견적 기준`, `${cn} 배관 금액이 달라지는 이유`, ...(spot ? [`${spot} 주변 현장 금액 안내`] : [])],
     pick: [`장비 5종과 배관기능사 직접 시공`, `탐지부터 복구까지 한 업체로`, `${cn} 누수 업체 고르는 기준`, ...(spot ? [`${spot} 주변 업체 비교 기준`] : [])],
     time: [`${br[0].name} 지점 방문 시간 안내`, `24시간·연중무휴 출장 순서`, `${cn} 누수 급할 때 연락 순서`, ...(spot ? [`${spot} 주변 방문 일정 안내`] : [])],
     base: [`계통 나누기부터 복구까지`, `발생 부위만 여는 탐지 순서`, `${cn} 배관에서 새는 자리 찾기`, ...(spot ? [`${spot} 주변 현장 탐지 순서`] : [])],
-  } as Record<MG, string[]>)[g], s, 'h1sub');
+  } as Record<MG, string[]>)[g], s);
+  const title = `${p.kw} ${h1sub} | ${BRAND}`; // h1 과 같은 글자 + 상호 한 번
 
   const summary = [c.answer, `${j(nm, '은')} ${C.route}입니다.`, pick([
     `누수 지점을 찾지 못하면 출장비는 받지 않고, ${nm} 현장도 찾은 뒤 수리·복구까지 이어서 합니다.`,
@@ -741,5 +754,5 @@ export function ray(p: Page) {
       : para([sents(vp[0])[0]], [...sents(vp[0]).slice(1), ...vp.slice(1).flatMap(sents), ...tail], s, 's6p', true),
   };
   const sections = [S1, S2, S3, S4, S5, S6].map((x, i) => ({ h: head(i, x.sub), p: x.p }));
-  return { c, cat: `${c.eyebrow} · ${sh}`, h1sub, lead: c.lead, summary, facts: c.summary, sections, faq: c.faq };
+  return { c, title, cat: `${c.eyebrow} · ${sh}`, h1sub, lead: c.lead, summary, facts: c.summary, sections, faq: c.faq };
 }
