@@ -35,7 +35,7 @@ export const placeUrl = (b: Branch) => `https://m.place.naver.com/place/${b.plac
 
 // 순차 오픈: 이 묶음 이하의 페이지만 빌드·사이트맵·내부링크에 포함된다 (7일 안 4묶음 — data/drip.json, scripts/drip/)
 export const OPEN_WAVE = Number(process.env.OPEN_WAVE || 1);
-export const UPDATED = '2026-11-16'; // content revision date - bump when page text changes
+export const UPDATED = '2026-11-24'; // content revision date - bump when page text changes
 export const MERGE_VARIANTS = false; // 엑셀 1,000행은 표기 변형이 따로 행으로 없음
 
 export const tel = `tel:${CONTACT.phone.replace(/[^0-9]/g, '')}`;
